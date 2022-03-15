@@ -2,6 +2,8 @@
 import React from 'react'
 import { View, TextInput, Button, StyleSheet} from 'react-native'
 import { FlatList, Text } from 'react-native'
+import films from '../Helpers/filmsData'
+import FilmItem from './FilmItem'
 
 const styles = StyleSheet.create({
     main_container: {
@@ -34,10 +36,8 @@ class Search extends React.Component {
             <View style={styles.main_container}>
                 <TextInput style={styles.textinput} placeholder='Titre du film'/>
                 <Button title='Rechercher' onPress={() => { }}/>
-                <FlatList 
-                data={ [ {key: 'a'}, {key: 'b'}]}
-                renderItem={({item}) => <Text>{item.key}</Text>}>
-                </FlatList>
+                <FlatList data={films} renderItem={({ item }) => <FilmItem film={item} />} 
+                keyExtractor={(item) => item.id.toString()}/>
             </View>
         )
     }
