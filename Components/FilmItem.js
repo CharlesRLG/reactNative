@@ -1,6 +1,7 @@
 // Components/FilmItem.js
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
+import dayjs from 'dayjs'
 // import 'react-json-pretty/themes/adventure_time.css'
 // import JSONPretty from 'react-json-pretty'
 
@@ -21,10 +22,12 @@ class FilmItem extends React.Component {
           <View style={styles.film_description}>
             <View style={styles.titreVote}>
               <Text style={styles.titreFilm}>{film.title}</Text>
-              <Text>{film.vote_average}</Text>
+              <Text style={styles.Vote_average_film}>{film.vote_average}</Text>
             </View>
             <Text style={styles.OverviewFilm}>{film.overview}</Text>
-            <Text style={styles.Release_date_film}>{film.release_date}</Text>
+            <Text style={styles.release_date_film}>
+              {dayjs(film.release_date).format('DD/MM/YYYY')}
+            </Text>
           </View>
         </View>
       </View>
@@ -35,6 +38,7 @@ const styles = StyleSheet.create({
   film_main_container: {
     flexDirection: 'row',
     margin: 20,
+    backgroundColor: '#FFFFFF',
   },
   film_description: {
     flexDirection:'column',
@@ -50,19 +54,23 @@ const styles = StyleSheet.create({
     minWidth: 300,
     fontWeight: 'bold',
   },
+  Vote_average_film: {
+    fontWeight: 'bold',
+  },
   OverviewFilm: {
     marginTop: 20,
     marginBottom: 20,
     maxWidth: 350,
     minHeight: 100,
   },
-  Release_date_film: {
+  release_date_film: {
     fontSize: 16,
     marginLeft: 250,
+    fontWeight: 'bold',
   },
   image: {
-        width: 120,
-        height: 180,
+        width: 200,
+        height: 300,
         flexDirection:'column',
     }
     
