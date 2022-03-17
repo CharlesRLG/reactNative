@@ -8,6 +8,12 @@ const getFilmsFromApiWithSearchedText = async (text) => {
     API_TOKEN +
     '&language=fr&query=' +
     text
-}
-
+    const response = await axios.get(url)
+    console.log('--getFilmsFromApiWithSearchedText--')
+    console.log(url)
+    console.log(response.data)
+    console.log('--fin getFilmsFromApiWithSearchedText--')
+    return response.data
+  }
+  
 export default getFilmsFromApiWithSearchedText
