@@ -1,8 +1,8 @@
 // Components/FilmItem.js
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
-import 'react-json-pretty/themes/adventure_time.css'
-import JSONPretty from 'react-json-pretty'
+// import 'react-json-pretty/themes/adventure_time.css'
+// import JSONPretty from 'react-json-pretty'
 
 class FilmItem extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class FilmItem extends React.Component {
     return (
       <View>
         <View>
-          <JSONPretty data={film}></JSONPretty>
+          {/* <JSONPretty data={film}></JSONPretty> */}
         </View>
         <View style={styles.film_main_container}>
           <Image
@@ -34,6 +34,7 @@ class FilmItem extends React.Component {
 const styles = StyleSheet.create({
   film_main_container: {
     flexDirection: 'row',
+    margin: 20,
   },
   film_description: {
     flexDirection:'column',
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
     marginRight: 50,
     fontSize: 20,
     minWidth: 300,
+    fontWeight: 'bold',
   },
   OverviewFilm: {
     marginTop: 20,
