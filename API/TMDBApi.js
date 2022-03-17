@@ -15,8 +15,13 @@ const getFilmsFromApiWithSearchedText = async (text) => {
     console.log('--fin getFilmsFromApiWithSearchedText--')
     return response.data
   }
+// API/TMDBApi.js
 const getImageFromApi = (name) => {
-    return { uri: 'https://image.tmdb.org/t/p/w300' + name }
-  }
+  if (name === null || name === undefined)
+    return require('../Assets/filmVide.jpg')
+  // 'https://image.tmdb.org/t/p/original' + name
+  // 'https://image.tmdb.org/t/p/w300' + name
+  return { uri: 'https://image.tmdb.org/t/p/w300' + name }
+}
   
   export { getFilmsFromApiWithSearchedText, getImageFromApi }
