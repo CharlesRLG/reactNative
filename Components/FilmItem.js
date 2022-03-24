@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   film_main_container: {
     flexDirection: 'row',
     margin: 20,
-    backgroundColor: '#EFFFFF',
+    backgroundColor: '#FFFFF',
   },
   film_description: {
     flexDirection:'column',
