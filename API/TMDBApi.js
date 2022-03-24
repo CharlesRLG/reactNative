@@ -15,7 +15,7 @@ const getFilmsFromApiWithSearchedText = async (text) => {
     'https://api.themoviedb.org/3/search/movie?api_key=' +
     API_TOKEN +
     '&language=fr&query=' +
-    text
+    text + "&page=" + page
     const response = await axios.get(url)
     console.log('--getFilmsFromApiWithSearchedText--')
     console.log(url)
